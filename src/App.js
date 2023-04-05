@@ -14,10 +14,15 @@ function Todo({ todo, index, markTodo, removeTodo }) {
           variant="outline-success"
           onClick={() => markTodo(index)}
           disabled={todo.isDone}
+          data-testid="project-set-done"
         >
           ✓
         </Button>{" "}
-        <Button variant="outline-danger" onClick={() => removeTodo(index)}>
+        <Button
+          variant="outline-danger"
+          onClick={() => removeTodo(index)}
+          data-testid="project-remove"
+        >
           ✕
         </Button>
       </div>
@@ -47,6 +52,7 @@ function FormTodo({ addTodo }) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Add new project"
+          data-testid="project-input-text"
         />
       </Form.Group>
       <Button variant="danger mb-3 mt-3 w-25" type="submit" disabled={!value}>
@@ -97,7 +103,7 @@ function App() {
       <div className="container">
         <h1 className="text-center mb-4">Projects List</h1>
         <FormTodo addTodo={addTodo} />
-        <div>
+        <div id="projects-list">
           {todos.map((todo, index) => (
             <Card key={`card-${todo.id}`}>
               <Card.Body>
