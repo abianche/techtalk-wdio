@@ -21,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "wdio": "wdio run ./wdio.conf.ts"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +41,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "^8.6.8",
+    "@wdio/cli": "^8.6.9",
+    "@wdio/dot-reporter": "^8.6.8",
+    "@wdio/firefox-profile-service": "^8.6.8",
+    "@wdio/local-runner": "^8.6.9",
+    "@wdio/mocha-framework": "^8.6.8",
+    "@wdio/spec-reporter": "^8.6.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3"
   }
 }
