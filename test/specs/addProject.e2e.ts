@@ -1,8 +1,19 @@
 import ProjectListPage from "../pageobjects/projectList.page";
 
 describe("Add a project", () => {
-  it("should add a project", async () => {
+  // beforeEach(async () => {
+  //   await browser.pause(3000);
+  // });
+
+  // afterEach(async () => {
+  //   await browser.pause(3000);
+  // });
+
+  it("should navigate to the app", async () => {
     await ProjectListPage.open();
+  });
+
+  it("should add a project", async () => {
     await ProjectListPage.addProject("Artificial Intelligence");
   });
 
